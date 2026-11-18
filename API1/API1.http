@@ -1,0 +1,94 @@
+@API1_HostAddress = http://localhost:5165
+@ProductId = 999999
+
+GET {{API1_HostAddress}}/api/products?page=1&pageSize=10
+Accept: application/json
+
+###
+
+GET {{API1_HostAddress}}/api/carts?page=1&pageSize=10
+Accept: application/json
+
+###
+
+GET {{API1_HostAddress}}/api/cartitems?page=1&pageSize=10
+Accept: application/json
+
+###
+
+GET {{API1_HostAddress}}/api/categories?page=1&pageSize=10
+Accept: application/json
+
+###
+
+GET {{API1_HostAddress}}/api/orders?page=1&pageSize=10
+Accept: application/json
+
+###
+
+GET {{API1_HostAddress}}/api/orderitems?page=1&pageSize=10
+Accept: application/json
+
+###
+
+GET {{API1_HostAddress}}/api/orderstatuses?page=1&pageSize=10
+Accept: application/json
+
+###
+
+GET {{API1_HostAddress}}/api/roles?page=1&pageSize=10
+Accept: application/json
+
+###
+
+GET {{API1_HostAddress}}/api/users?page=1&pageSize=10
+Accept: application/json
+
+###
+
+GET {{API1_HostAddress}}/api/products/{{ProductId}}
+Accept: application/json
+
+###
+
+POST {{API1_HostAddress}}/api/products
+Content-Type: application/json
+
+{
+	"categoryId": 1,
+	"productName": "Test tea",
+	"price": 450.00,
+	"size": "100g",
+	"color": null,
+	"stockQuantity": 12,
+	"imagePath": "test-tea.jpg"
+}
+
+###
+
+# Set ProductId to the ID returned by POST before testing updates.
+PUT {{API1_HostAddress}}/api/products/{{ProductId}}
+Content-Type: application/json
+
+{
+	"categoryId": 1,
+	"productName": "Updated tea",
+	"price": 500.00,
+	"size": "100g",
+	"color": null,
+	"stockQuantity": 10,
+	"imagePath": "updated-tea.jpg"
+}
+
+###
+
+PATCH {{API1_HostAddress}}/api/products/{{ProductId}}
+Content-Type: application/json
+
+{
+	"price": 525.00
+}
+
+###
+
+DELETE {{API1_HostAddress}}/api/products/{{ProductId}}

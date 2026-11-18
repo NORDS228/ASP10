@@ -1,0 +1,9 @@
+.vs/
+**/bin/
+**/obj/
+**/*.csproj.user
+**/Report_Practice_*.md
+**/Report_Practice_*.docx
+**/GeneratePracticeReport.ps1
+**/appsettings.json
+**/appsettings.Development.json
